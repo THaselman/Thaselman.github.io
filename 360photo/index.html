@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>A-Frame - Image Textures</title>
+	<script src="js/aframe-master.1.0.4.min.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+</head>
+
+<body>
+<a-scene antialias="true">
+	
+	<a-assets>
+		<img id="sky" src="images/stars.jpg" crossorigin="anonymous" />
+        <img id="woods" src="images/woods.jpg" crossorigin="anonymous" />
+        <img id="bridge" src="images/bridge.jpg" crossorigin="anonymous" />
+        <img id="trees" src="images/trees.jpg" crossorigin="anonymous" />
+        <img id="vctbuilding" src="images/vctbuilding.jpg" crossorigin="anonymous" />
+	</a-assets>
+		
+	<a-sky 
+		color = "#FFFFFF"
+		material = "src: #sky">
+	</a-sky>
+
+    <a-camera>
+        <a-cursor></a-cursor>
+    </a-camera>
+    
+    <a-box
+        position="-3 2 -4"
+        scale=".4 .4 .4"     
+        rotation="0 45 0"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #woods"      
+      ></a-box>
+
+    
+    <a-box
+        position="2 2 4"
+        scale=".4 .4 .4"     
+        rotation="0 45 0"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #bridge"      
+      ></a-box>
+
+     <a-box
+        position="-4 2 3"
+        scale=".4 .4 .4"     
+        rotation="0 45 0"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #trees"      
+      ></a-box>
+    
+    <a-box
+        position="4 2 -3"
+        scale=".4 .4 .4"     
+        rotation="0 45 0"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #vctbuilding"      
+      ></a-box>
+
+
+	
+</a-scene>
+</body>
+</html>
